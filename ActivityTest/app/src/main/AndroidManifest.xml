@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstActivity">
+        <activity android:name=".FirstActivity"
+            android:launchMode="singleTop"
+            android:label="This is FirstActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +33,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:scheme="http"/>
             </intent-filter>
+
         </activity>
     </application>
 
