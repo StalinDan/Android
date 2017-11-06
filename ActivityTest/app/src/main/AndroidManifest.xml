@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".FirstActivity"
-            android:launchMode="singleTop"
+        android:launchMode="singleTask"
             android:label="This is FirstActivity">
 
             <intent-filter>
@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity">
+        <activity android:name=".SecondActivity"
+            android:label="This is SecondActivity"
+            android:launchMode="singleInstance">>
             <intent-filter>
                 <action android:name="com.example.danish.activityTest.ACTION_Start" />
 

@@ -1,5 +1,6 @@
 package com.example.danish.activitytest;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,8 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.first_layout);
 
         Log.d("FirstActivity",this.toString());
+
+        Log.d("FirstActivity","Task id is" + getTaskId());
 
         Button btn = (Button) findViewById(R.id.button_1);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +60,16 @@ public class FirstActivity extends AppCompatActivity {
 //                startActivityForResult(intent,1);
 
 
-                Intent intent = new Intent(FirstActivity.this,FirstActivity.class);
+//                Intent intent = new Intent(FirstActivity.this,FirstActivity.class);
+//                startActivity(intent);
+
+                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
                 startActivity(intent);
+
+                String data1 = "123",data2 = "456";
+                Intent intent2 = new Intent(FirstActivity.this, SecondActivity.class);
+                SecondActivity.actionStart(FirstActivity.this,data1,data2);
+//                startActivity(intent2);
 
             }
         });
@@ -97,5 +108,9 @@ public class FirstActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("FirstActivity","onRestart");
+    }
 }
