@@ -19,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
         initFruits();
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager  layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
         FruitAdapter adapter = new FruitAdapter(fruitList);
         recyclerView.setAdapter(adapter);
     }
 
     private void initFruits(){
-        for (int i = 0; i<10;i++) {
+        for (int i = 0; i<20;i++) {
             Fruit apple = new Fruit("apple",R.drawable.apple);
             fruitList.add(apple);
         }
