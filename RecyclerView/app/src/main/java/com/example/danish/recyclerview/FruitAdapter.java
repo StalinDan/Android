@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -21,9 +22,11 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView fruitImg;
         TextView fruitName;
+        View fruitView;
 
         public ViewHolder(View view) {
             super(view);
+            fruitView = view;
             fruitImg = view.findViewById(R.id.fruit_image);
             fruitName = view.findViewById(R.id.fruit_name);
         }
@@ -35,8 +38,29 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>
 
     @Override
     public FruitAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+//        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item,null);
+//        ViewHolder holder = new ViewHolder(view);
+//        return holder;
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item,null);
-        ViewHolder holder = new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.fruitView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = holder.getAdapterPosition();
+                Fruit fruit = mFruitList.get(position);
+                Toast.makeText(view.getContext(),"you clicked view " +fruit.getName(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        holder.fruitImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = holder.getAdapterPosition();
+                Fruit fruit = mFruitList.get(position);
+                Toast.makeText(view.getContext(),"you Clicked img " + fruit.getName(),Toast.LENGTH_SHORT).show();
+            }
+        });
         return holder;
     }
 
