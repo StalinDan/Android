@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(this);
-        replaceFragment(new RightFragment());
+//        replaceFragment(new RightFragment());
 
     }
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button:
-                replaceFragment(new AnotherRightFragment());
+//                replaceFragment(new AnotherRightFragment());
                 break;
 
             default:
@@ -37,17 +37,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    private void replaceFragment(android.support.v4.app.Fragment fragment) {
-//        FragmentManager fragmentManager = getSupportFragmentManager();
+//    private void replaceFragment(android.support.v4.app.Fragment fragment) {
+////        FragmentManager fragmentManager = getSupportFragmentManager();
+////        FragmentTransaction transaction = fragmentManager.beginTransaction();
+////        transaction.replace(R.id.right_layout,fragment);
+////        transaction.commit();
+//
+//        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
 //        FragmentTransaction transaction = fragmentManager.beginTransaction();
 //        transaction.replace(R.id.right_layout,fragment);
+//        transaction.addToBackStack(null);
 //        transaction.commit();
-
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.right_layout,fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-
-    }
+//
+//    }
 }
