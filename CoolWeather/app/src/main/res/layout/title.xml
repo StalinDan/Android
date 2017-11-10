@@ -11,6 +11,15 @@
         android:textColor="#fff"
         android:textSize="20sp"/>
 
+    <Button
+        android:id="@+id/nav_button"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="切换城市"/>
+
     <TextView
         android:id="@+id/title_update_time"
         android:layout_width="wrap_content"
