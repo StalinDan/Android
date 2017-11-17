@@ -12,7 +12,7 @@ public class News {
         return title;
     }
 
-    public void setTitle() {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -20,7 +20,7 @@ public class News {
         return content;
     }
 
-    public void setContent() {
+    public void setContent(String content) {
         this.content = content;
     }
 
