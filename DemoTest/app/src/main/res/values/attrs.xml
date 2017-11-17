@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MainMenu">
+        <attr name="selectedImage" format="integer" />
+        <attr name="noselectedImage" format="integer" />
+        <attr name="selectedtextcolor" format="color" />
+        <attr name="noselectedtextcolor" format="color" />
+        <attr name="menutext" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="select">
+        <attr name="titletext" format="string" />
+    </declare-styleable>
+</resources>
