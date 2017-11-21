@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -19,7 +20,6 @@ import com.example.danish.demotest.Widgets.MainMenuLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,8 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     MainMenuLayout mainAboutusMenu;
     @BindView(R.id.main_tab_ll)
     LinearLayout mainTabLl;
-
-    DataBoardFragment dataBoardFragment;
+    private DataBoardFragment dataBoardFragment;
     RankingFragment rankingFragment;
     MonitorFragment monitorFragment;
     WarnFragment warnFragment;
@@ -71,14 +70,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         aboutFragment = new AboutFragment();
         rankingFragment = new RankingFragment();
 
-
-        layoutContent = (FrameLayout) findViewById(R.id.layout_content);
         mainDatabillboardMenu.setOnClickListener(this);
         mainStutasMenu.setOnClickListener(this);
         mainWarningMenu.setOnClickListener(this);
         mainRankingMenu.setOnClickListener(this);
         mainAboutusMenu.setOnClickListener(this);
 
+        switchFragment(MONITOR_FRAGMENT);
     }
 
     @Override
@@ -113,16 +111,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Fragment lastFragment = returnFragment(lastFragmentIndex);
         Fragment showFragment = returnFragment(fragmentIndex);
-        changeMenu(lastFragmentIndex,fragmentIndex);
+        changeMenu(lastFragmentIndex, fragmentIndex);
 
-        showSelectFragment(lastFragment,showFragment);
+        showSelectFragment(lastFragment, showFragment);
         lastFragmentIndex = fragmentIndex;
     }
 
     private Fragment returnFragment(int fragmentIndex) {
         switch (fragmentIndex) {
             case DATA_FRAGMENT:
-                return  dataBoardFragment;
+                return dataBoardFragment;
             case MONITOR_FRAGMENT:
                 return monitorFragment;
             case WARN_FRAGMENT:
@@ -135,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return dataBoardFragment;
     }
 
-    private void changeMenu(int lastFragmentIndex,int showFragmentIndex) {
+    private void changeMenu(int lastFragmentIndex, int showFragmentIndex) {
         switch (lastFragmentIndex) {
             case DATA_FRAGMENT:
                 mainDatabillboardMenu.selectMenu(false);
@@ -147,20 +145,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mainAboutusMenu.selectMenu(false);
             case RANKING_FRAGMENT:
                 mainRankingMenu.selectMenu(false);
+
+            default:
                 break;
         }
 
         switch (showFragmentIndex) {
             case DATA_FRAGMENT:
                 mainDatabillboardMenu.selectMenu(true);
+                break;
             case MONITOR_FRAGMENT:
+//                if (mainStutasMenu == null) {
+//                    Log.d("MainActivity", "为空");
+//                } else {
+//                    Log.d("MainActivity", "不为空");
+//                }
                 mainStutasMenu.selectMenu(true);
+                break;
             case WARN_FRAGMENT:
                 mainWarningMenu.selectMenu(true);
+                break;
             case ABOUT_FRAGMENT:
                 mainAboutusMenu.selectMenu(true);
+                break;
             case RANKING_FRAGMENT:
                 mainRankingMenu.selectMenu(true);
+                break;
+            default:
                 break;
         }
     }
@@ -172,9 +183,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (!nowFragment.isAdded()) {
-            ft.add(R.id.layout_content,nowFragment);
+            ft.add(R.id.layout_content, nowFragment);
             ft.show(nowFragment);
-        }else  {
+        } else {
             ft.show(nowFragment);
         }
         ft.commitAllowingStateLoss();

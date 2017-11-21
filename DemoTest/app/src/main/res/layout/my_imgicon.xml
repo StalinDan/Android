@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/my_imgIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/gift"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/my_imgText"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/my_imgIcon"
+        android:layout_marginTop="5dp"
+        android:text="礼品"
+        android:textColor="@color/color_666"/>
+
+</RelativeLayout>

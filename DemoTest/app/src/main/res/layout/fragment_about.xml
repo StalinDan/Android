@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:menu="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="我的"/>
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center"-->
+        <!--android:text="我的"/>-->
+
+    <!--<com.example.danish.demotest.Widgets.My_iconItem-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--menu:itemTitle="礼物"-->
+        <!--menu:itemImg = "@mipmap/gift"-->
+        <!--&gt;-->
+    <!--</com.example.danish.demotest.Widgets.My_iconItem>-->
+
+    <!--<com.example.danish.demotest.Widgets.My_iconItem-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--menu:itemTitle="礼物"-->
+        <!--menu:itemImg = "@mipmap/gift"-->
+        <!--&gt;-->
+    <!--</com.example.danish.demotest.Widgets.My_iconItem>-->
+
+    <!--<com.example.danish.demotest.Widgets.My_iconItem-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--menu:itemTitle="礼物"-->
+        <!--menu:itemImg = "@mipmap/gift"-->
+        <!--&gt;-->
+    <!--</com.example.danish.demotest.Widgets.My_iconItem>-->
+
+    <!--<com.example.danish.demotest.Widgets.My_iconItem-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--menu:itemTitle="礼物"-->
+        <!--menu:itemImg = "@mipmap/gift"-->
+        <!--&gt;-->
+    <!--</com.example.danish.demotest.Widgets.My_iconItem>-->
+
+
 </LinearLayout>

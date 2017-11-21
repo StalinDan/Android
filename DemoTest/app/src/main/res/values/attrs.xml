@@ -12,4 +12,9 @@
     <declare-styleable name="select">
         <attr name="titletext" format="string" />
     </declare-styleable>
+    
+    <declare-styleable name="my_imgItem">
+        <attr name="itemTitle" format="string"></attr>
+        <attr name="itemImg"></attr>
+    </declare-styleable>
 </resources>

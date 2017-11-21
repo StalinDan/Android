@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.danish.demotest.Activity.NewsDetailActivity">
+
+    <TextView
+        android:id="@+id/newsDetail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="新闻标题"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/color_333"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:textColor="@color/color_666"
+        android:textSize="17sp"
+        android:text="2017-11-24"
+        android:layout_gravity="end"/>
+
+    <ScrollView
+        android:layout_marginTop="15dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/newsDetail_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
