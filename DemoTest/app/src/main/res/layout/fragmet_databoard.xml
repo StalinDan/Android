@@ -11,6 +11,7 @@
         <!--android:gravity="center"-->
         <!--android:text="数据看板"/>-->
 
+    <include layout="@layout/commont_topbar"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/news_list_recyclerView"
         android:layout_width="match_parent"

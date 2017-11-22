@@ -4,7 +4,6 @@ import android.support.v4.util.ArrayMap;
 
 import com.example.danish.baseproject.BuildConfig;
 import com.example.danish.baseproject.dbUtil.SharedPreferenceManager;
-import com.example.danish.baseproject.net.base.RequestListener;
 import com.example.danish.baseproject.utils.DeviceUtil;
 import com.example.danish.baseproject.utils.MyLogger;
 import com.google.gson.Gson;

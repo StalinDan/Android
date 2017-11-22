@@ -1,4 +1,4 @@
-package com.example.danish.baseproject.net.base;
+package com.example.danish.baseproject.net;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

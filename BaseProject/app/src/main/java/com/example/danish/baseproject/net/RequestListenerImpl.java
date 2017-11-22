@@ -1,7 +1,9 @@
-package com.example.danish.baseproject.net.base;
+package com.example.danish.baseproject.net;
 
 import android.content.Intent;
+
 import com.example.danish.baseproject.AsimsApplication;
+import com.example.danish.baseproject.net.base.BaseBean;
 import com.example.danish.baseproject.utils.MyLogger;
 import com.google.gson.Gson;
 

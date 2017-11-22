@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.danish.demotest.Activity.MainActivity">
 
+    <!--<include layout="@layout/commont_topbar" android:id="@+id/topBar"/>-->
+
     <FrameLayout
         android:id="@+id/layout_content"
         android:layout_width="match_parent"

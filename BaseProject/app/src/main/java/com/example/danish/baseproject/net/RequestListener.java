@@ -1,4 +1,4 @@
-package com.example.danish.baseproject.net.base;
+package com.example.danish.baseproject.net;
 
 
 public interface RequestListener{
