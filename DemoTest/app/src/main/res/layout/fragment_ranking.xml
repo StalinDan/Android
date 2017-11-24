@@ -4,9 +4,16 @@
     android:layout_height="match_parent">
 
     <include layout="@layout/commont_topbar"/>
-    <TextView
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="排名"/>-->
+
+    <Button
+        android:id="@+id/sendBtn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="排名"/>
+        android:layout_height="wrap_content"
+        android:text="发送广播"
+        android:textSize="20sp"/>
 </LinearLayout>
