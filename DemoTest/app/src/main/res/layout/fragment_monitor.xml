@@ -4,10 +4,18 @@
     android:layout_height="match_parent">
 
     <include layout="@layout/commont_topbar"/>
-    <TextView
-        android:id="@+id/monitor"
+    <!--<TextView-->
+        <!--android:id="@+id/monitor"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center"-->
+        <!--android:text="监控"/>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/waterFlow_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="监控"/>
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
 </LinearLayout>

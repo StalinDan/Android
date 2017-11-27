@@ -6,11 +6,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.OrientationHelper;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.danish.demotest.Adapter.WaterFlowAdapter;
 import com.example.danish.demotest.R;
 
 import butterknife.BindView;
@@ -23,8 +27,8 @@ import butterknife.Unbinder;
 
 public class MonitorFragment extends BaseFragment {
 
-    @BindView(R.id.monitor)
-    TextView monitor;
+//    @BindView(R.id.monitor)
+//    TextView monitor;
     Unbinder unbinder;
 
     private ChangeTextReceivr changeTextReceivr;
@@ -35,11 +39,18 @@ public class MonitorFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_monitor, null);
         unbinder = ButterKnife.bind(this, view);
 
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("com.example.danish.demotest.ChangeMonitorTitle");
-        changeTextReceivr = new ChangeTextReceivr();
-        getActivity().registerReceiver(changeTextReceivr,intentFilter);
+//        IntentFilter intentFilter = new IntentFilter();
+//        intentFilter.addAction("com.example.danish.demotest.ChangeMonitorTitle");
+//        changeTextReceivr = new ChangeTextReceivr();
+//        getActivity().registerReceiver(changeTextReceivr,intentFilter);
 
+
+        RecyclerView recyclerView = view.findViewById(R.id.waterFlow_recyclerView);
+        StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, OrientationHelper.VERTICAL);
+        recyclerView.setLayoutManager(manager);
+
+        WaterFlowAdapter adapter = new WaterFlowAdapter(getContext());
+        recyclerView.setAdapter(adapter);
         return view;
     }
 
@@ -58,7 +69,7 @@ public class MonitorFragment extends BaseFragment {
     class ChangeTextReceivr extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            monitor.setText("字体被修改了");
+//            monitor.setText("字体被修改了");
         }
     }
 }

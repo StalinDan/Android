@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,9 +41,16 @@ public class DataBoardFragment extends BaseFragment {
 
         final RecyclerView recyclerView = view.findViewById(R.id.news_list_recyclerView);
 
+        //1. 以垂直或者水平列表方式展示Item
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
 
-        recyclerView.setLayoutManager(manager);
+        //2. 以网格方式展示Item
+        GridLayoutManager manager1 = new GridLayoutManager(getContext(),4, OrientationHelper.VERTICAL,false);
+
+        //3. 以瀑布流方式展示Item
+        StaggeredGridLayoutManager manager2 = new StaggeredGridLayoutManager(2,OrientationHelper.VERTICAL);
+
+        recyclerView.setLayoutManager(manager1);
 
         final NewsListAdaper adaper = new NewsListAdaper(getContext(),newsBeanList);
 
