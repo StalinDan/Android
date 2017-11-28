@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -16,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +44,14 @@ public class RankingFragment extends BaseFragment {
     Unbinder unbinder;
     @BindView(R.id.sendBtn)
     Button sendBtn;
+    @BindView(R.id.rank_camera)
+    Button rankCamera;
+//    @BindView(R.id.rank_passValue)
+//    Button rankPassValue;
+//    @BindView(R.id.rank_editText)
+//    EditText rankEditText;
+//    @BindView(R.id.rand_text)
+//    TextView randText;
 
     private Activity activity;
     private Context mContext;
@@ -63,6 +73,15 @@ public class RankingFragment extends BaseFragment {
                 activity.sendBroadcast(intent);
             }
         });
+
+        rankCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, 0);
+            }
+        });
+
 
         if (activity == null) {
             Log.d("RankingFragment", "为空");
@@ -145,6 +164,49 @@ public class RankingFragment extends BaseFragment {
                 break;
             default:
                 break;
+        }
+    }
+
+    public class Book {
+        private int id;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        private String title;
+    }
+
+    public class Author {
+        private int id;
+        private String name;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
     }
 }

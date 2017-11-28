@@ -16,4 +16,30 @@
         android:layout_height="wrap_content"
         android:text="发送广播"
         android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/rank_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拍照"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/rank_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--<Button-->
+        <!--android:id="@+id/rank_passValue"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="传递数据"-->
+        <!--android:textSize="20sp"/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/rand_text"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="20sp"/>-->
+
 </LinearLayout>

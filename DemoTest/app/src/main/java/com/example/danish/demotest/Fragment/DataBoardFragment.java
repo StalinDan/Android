@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
@@ -31,11 +32,16 @@ public class DataBoardFragment extends BaseFragment {
 
     private boolean isSelected;
     private List <NewsBean> newsBeanList = new ArrayList<>();
+    private FragmentManager fManager = null;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
        View view =  inflater.inflate(R.layout.fragmet_databoard,null);
+
+        fManager = getFragmentManager();
 
        initData();
 
@@ -50,11 +56,13 @@ public class DataBoardFragment extends BaseFragment {
         //3. 以瀑布流方式展示Item
         StaggeredGridLayoutManager manager2 = new StaggeredGridLayoutManager(2,OrientationHelper.VERTICAL);
 
-        recyclerView.setLayoutManager(manager1);
+        recyclerView.setLayoutManager(manager);
 
-        final NewsListAdaper adaper = new NewsListAdaper(getContext(),newsBeanList);
+        final NewsListAdaper adaper = new NewsListAdaper(getContext(),newsBeanList,fManager);
 
         recyclerView.setAdapter(adaper);
+
+
 
        return view;
 

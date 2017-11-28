@@ -1,7 +1,12 @@
 package com.example.danish.demotest.Adapter;
 
+import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,7 +16,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.danish.demotest.Activity.NewsDetailActivity;
+import com.example.danish.demotest.Fragment.NewsContentFragment;
 import com.example.danish.demotest.R;
+import com.example.danish.demotest.Widgets.NewsContent;
 import com.example.danish.demotest.bean.NewsBean;
 
 import java.util.List;
@@ -38,6 +46,7 @@ public class NewsListAdaper extends RecyclerView.Adapter<NewsListAdaper.MyViewHo
 
     private List<NewsBean> mNewsBeanList;
 
+    private FragmentManager mFragManager;
 
 //    public interface onRecyclerViewListener {
 //        void onItemClick(View view, int position);
@@ -54,9 +63,11 @@ public class NewsListAdaper extends RecyclerView.Adapter<NewsListAdaper.MyViewHo
 //        this.onRecyclerViewListener = onRecyclerViewListener;
 //    }
 
-    public NewsListAdaper(Context context, List<NewsBean> newsBeanList) {
+    public NewsListAdaper(Context context, List<NewsBean> newsBeanList,FragmentManager fragmentManager) {
         mContext = context;
         mNewsBeanList = newsBeanList;
+
+        mFragManager = fragmentManager;
     }
 
     @Override
@@ -68,12 +79,30 @@ public class NewsListAdaper extends RecyclerView.Adapter<NewsListAdaper.MyViewHo
 
                 Log.d("NewsListAdaper","onItemClick---"+position);
 
-                NewsBean news = new NewsBean();
-                news.setTitle("添加标题"+(position+1));
-                news.setContent("添加内容="+(position+1));
-                news.setSelected(false);
+//                NewsBean news = new NewsBean();
+//                news.setTitle("添加标题"+(position+1));
+//                news.setContent("添加内容="+(position+1));
+//                news.setSelected(false);
+//
+//                insert(news,position);
 
-                insert(news,position);
+
+//                Intent intent = new Intent(mContext,NewsDetailActivity.class);
+//                mContext.startActivity(intent);
+
+
+                FragmentTransaction transaction = mFragManager.beginTransaction();
+                NewsContentFragment contentFragment = new NewsContentFragment();
+                Bundle bd = new Bundle();
+                bd.putString("content",mNewsBeanList.get(position).getContent());
+                contentFragment.setArguments(bd);
+
+//                transaction.setCustomAnimations(R.anim.)
+                transaction.replace(R.id.layout_content,contentFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+
+
             }
         });
 

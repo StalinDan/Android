@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainAboutusMenu.setOnClickListener(this);
 
         switchFragment(MONITOR_FRAGMENT);
+
+//        getFragmentManager();
     }
 
     @Override
