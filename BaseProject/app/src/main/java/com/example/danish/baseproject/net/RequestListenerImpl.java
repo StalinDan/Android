@@ -21,6 +21,8 @@ public abstract class RequestListenerImpl<T extends BaseBean> implements Request
 
             T responseBody = gson.fromJson(response, getTypeReference());
 
+//            onSuccess(responseBody);
+
             if (responseBody == null || responseBody.getType() == null) {
                 MyLogger.i("responseBody null -->  pageIN and pageOUT");
             } else if (responseBody.getType().equals("1")) {
