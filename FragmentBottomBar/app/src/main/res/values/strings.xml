@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FragmentBottomBar</string>
+    <string name="bar_movie">电影</string>
+    <string name="bar_book">读书</string>
 </resources>
