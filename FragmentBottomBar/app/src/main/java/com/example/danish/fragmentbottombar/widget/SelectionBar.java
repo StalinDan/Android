@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 
 public class SelectionBar extends LinearLayout {
 
-private
 
     public SelectionBar(Context context) {
         super(context);
