@@ -31,10 +31,8 @@ public class HomeActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.home_pager);
 
-        tabLayout.addTab(tabLayout.newTab().setText("电影"));
-        tabLayout.addTab(tabLayout.newTab().setText("读书"));
-//        tabLayout.addTab(tabLayout.newTab().setText("最热新闻"));
-//        tabLayout.addTab(tabLayout.newTab().setText("搞笑视频"));
+        tabLayout.addTab(tabLayout.newTab().setText("最热新闻"));
+        tabLayout.addTab(tabLayout.newTab().setText("搞笑视频"));
 //        tabLayout.addTab(tabLayout.newTab().setText("短视频"));
 //        tabLayout.addTab(tabLayout.newTab().setText("新闻"));
 
@@ -81,6 +79,7 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-
+        tabLayout.getTabAt(0).setText("电影");
+        tabLayout.getTabAt(1).setText("读书");
     }
 }

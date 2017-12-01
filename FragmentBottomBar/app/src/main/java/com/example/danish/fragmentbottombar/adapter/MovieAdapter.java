@@ -1,12 +1,14 @@
 package com.example.danish.fragmentbottombar.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.danish.fragmentbottombar.R;
+import com.example.danish.fragmentbottombar.activity.MovieDetailActivity;
 
 /**
  * Created by danish on 2017/11/30.
@@ -30,6 +32,15 @@ public class MovieAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
+        holder = (MyViewHolder)holder;
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(mContext,MovieDetailActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
