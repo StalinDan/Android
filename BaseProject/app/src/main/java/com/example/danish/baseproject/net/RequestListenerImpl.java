@@ -23,20 +23,29 @@ public abstract class RequestListenerImpl<T extends BaseBean> implements Request
 
 //            onSuccess(responseBody);
 
-            if (responseBody == null || responseBody.getType() == null) {
-                MyLogger.i("responseBody null -->  pageIN and pageOUT");
-            } else if (responseBody.getType().equals("1")) {
-                onSuccess(responseBody);
-            } else if (responseBody.getType().equals("401")) {
-                Intent intent = new Intent();
-                intent.setAction("com.deayea.asims.Broadcast.401");
-                AsimsApplication.getContext().sendBroadcast(intent);
-            } else if (responseBody.getType().equals("4101") || responseBody.getType().equals("4102")) {
-                type(responseBody.getType());
+//            if (responseBody == null || responseBody.getType() == null) {
+//                MyLogger.i("responseBody null -->  pageIN and pageOUT");
+//            } else if (responseBody.getType().equals("1")) {
+//                onSuccess(responseBody);
+//            } else if (responseBody.getType().equals("401")) {
+//                Intent intent = new Intent();
+//                intent.setAction("com.deayea.asims.Broadcast.401");
+//                AsimsApplication.getContext().sendBroadcast(intent);
+//            } else if (responseBody.getType().equals("4101") || responseBody.getType().equals("4102")) {
+//                type(responseBody.getType());
+//            } else {
+//                onFail(responseBody.getMsg());
+//                MyLogger.i(responseBody.getMsg());
+//            }
+
+            if (responseBody == null ) {
+                onFail("数据错误=====");
+//                MyLogger.i(responseBody.getMsg());
             } else {
-                onFail(responseBody.getMsg());
-                MyLogger.i(responseBody.getMsg());
+
+                onSuccess(responseBody);
             }
+
         } catch (Exception e) {
             onFail("解析错误" + e.toString());
             MyLogger.i(e.toString());
