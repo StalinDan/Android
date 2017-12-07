@@ -59,7 +59,7 @@ public class MovieListBean extends BaseBean {
         this.title = title;
     }
 
-    public class MovieItemBean {
+    public class MovieItemBean implements Serializable{
         private Rateing rating;
         private List<String> genres;
         private String title;

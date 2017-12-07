@@ -2,6 +2,7 @@ package com.example.danish.baseproject.bean;
 
 import com.example.danish.baseproject.net.base.BaseBean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -48,7 +49,7 @@ public class BookListBean extends BaseBean {
         this.books = books;
     }
 
-    public static class BooksBean {
+    public static class BooksBean implements Serializable{
 
         private RatingBean rating;
         private String subtitle;
@@ -285,7 +286,7 @@ public class BookListBean extends BaseBean {
             this.translator = translator;
         }
 
-        public static class RatingBean {
+        public static class RatingBean implements Serializable{
             /**
              * max : 10
              * numRaters : 14135
@@ -331,7 +332,7 @@ public class BookListBean extends BaseBean {
             }
         }
 
-        public static class ImagesBean {
+        public static class ImagesBean implements Serializable{
             /**
              * small : https://img3.doubanio.com/spic/s4669554.jpg
              * large : https://img3.doubanio.com/lpic/s4669554.jpg
@@ -367,7 +368,7 @@ public class BookListBean extends BaseBean {
             }
         }
 
-        public static class SeriesBean {
+        public static class SeriesBean implements Serializable{
             /**
              * id : 18631
              * title : 幻想与哲学
@@ -393,7 +394,7 @@ public class BookListBean extends BaseBean {
             }
         }
 
-        public static class TagsBean {
+        public static class TagsBean implements Serializable {
             /**
              * count : 7337
              * name : 计算机

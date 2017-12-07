@@ -1,6 +1,7 @@
 package com.example.danish.baseproject.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -13,7 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.danish.baseproject.R;
-import com.example.danish.baseproject.bean.BookListBean.BooksBean;
+import com.example.danish.baseproject.activity.BookDetailActivity;
+import com.example.danish.baseproject.bean.BookListBean;
 import com.example.danish.baseproject.bitmaputils.ImageLoadUtils;
 import com.github.lzyzsd.randomcolor.RandomColor;
 
@@ -31,9 +33,9 @@ public class BookAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
     private Context mContext;
-    private List<BooksBean> mBookList;
+    private List<BookListBean.BooksBean> mBookList;
 
-    public BookAdapter(Context context, List<BooksBean> bookList) {
+    public BookAdapter(Context context, List<BookListBean.BooksBean> bookList) {
 
         mContext = context;
         mBookList = bookList;
@@ -61,7 +63,7 @@ public class BookAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         Drawable drawable = ResourcesCompat.getDrawable(mContext.getResources(),R.drawable.bg_oval_corner,null);
         drawable.setTint(color);
 
-        BooksBean booksBean = mBookList.get(position);
+        final BookListBean.BooksBean booksBean = mBookList.get(position);
         ImageLoadUtils.loadImageView(mContext, booksBean.getImage(), viewHolder.bookImg);
         viewHolder.bookName.setText(booksBean.getTitle());
         String author = "";
@@ -74,6 +76,15 @@ public class BookAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         viewHolder.bookVersion.setText(booksBean.getPubdate());
         viewHolder.bookPage.setText(booksBean.getPages());
         viewHolder.bookPrice.setText(booksBean.getPrice());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext,BookDetailActivity.class);
+                intent.putExtra("book",booksBean);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

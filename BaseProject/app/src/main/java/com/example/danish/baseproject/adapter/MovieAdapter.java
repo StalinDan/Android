@@ -1,5 +1,6 @@
 package com.example.danish.baseproject.adapter;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,6 +16,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.danish.baseproject.R;
+import com.example.danish.baseproject.activity.MovieDetailActivity;
 import com.example.danish.baseproject.bean.MovieListBean;
 import com.example.danish.baseproject.bitmaputils.BitmapLoadUtil;
 import com.example.danish.baseproject.bitmaputils.ImageLoadUtils;
@@ -50,7 +52,7 @@ public class MovieAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
         holder = (MyViewHolder)holder;
-        MovieListBean.MovieItemBean itemBean = mMovieItemBeanList.get(position);
+        final MovieListBean.MovieItemBean itemBean = mMovieItemBeanList.get(position);
         ((MyViewHolder) holder).movieName.setText(itemBean.getTitle());
 
         ((MyViewHolder) holder).ratingBar.setRating(itemBean.getRating().getAverage()/2);
@@ -64,8 +66,9 @@ public class MovieAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View v) {
 
-//                Intent intent = new Intent(mContext,MovieDetailActivity.class);
-//                mContext.startActivity(intent);
+                Intent intent = new Intent(mContext,MovieDetailActivity.class);
+                intent.putExtra("Movie",itemBean);
+                mContext.startActivity(intent);
             }
         });
 
