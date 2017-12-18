@@ -7,5 +7,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    
+    <style name="ContexPopupAnim" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/context_popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/context_popup_exit</item>
+    </style>
 
 </resources>

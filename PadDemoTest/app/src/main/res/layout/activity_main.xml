@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.danish.paddemotest.MainActivity">
+
+    <com.example.danish.paddemotest.widget.TopBar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/colorPrimary"
+        app:leftImg="@mipmap/back"
+        app:title="123"
+        >
+
+    </com.example.danish.paddemotest.widget.TopBar>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/main_recycler"

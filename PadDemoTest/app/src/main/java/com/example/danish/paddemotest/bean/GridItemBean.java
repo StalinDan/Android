@@ -34,7 +34,7 @@ public class GridItemBean {
         this.name = name;
     }
 
-    public int isStatus() {
+    public int getStatus() {
         return status;
     }
 
