@@ -51,9 +51,5 @@ public class QBHomeActivity extends AppCompatActivity {
             img.setBackgroundColor(mColors[i]);
             mList.add(img);
         }
-
-        for (int i=0;i<5;i++) {
-            
-        }
     }
 }

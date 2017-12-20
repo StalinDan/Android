@@ -47,7 +47,11 @@ public class AsyncRequestRunner {
     public final static int RequestUPLOADIMAGE = 0x0003;
     public final static int RequestPUT = 0x0004;
 
-    public final static String HOST = "https://api.douban.com/v2/";
+    //电影，书
+//    public final static String HOST = "https://api.douban.com/v2/";
+
+    //视频
+    public final static String HOST = "http://114.55.250.37:8080/videos/";
     public final static String WebSocketHOST = "wss://mapi.bm.deayea.com/";
     public final static String DATAHOST = "http://th.bm.deayea.com/";
 
