@@ -1,7 +1,9 @@
 package com.example.danish.paddemotest.widget;
 
 import android.animation.ObjectAnimator;
+import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -19,6 +21,7 @@ public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
         this.spanCount = spanCount;
         this.spacing = spacing;
         this.includeEdge = includeEdge;
+        
     }
 
     @Override
@@ -45,4 +48,39 @@ public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
     }
 
 
-}
+    /**
+     * 是否是最后一行
+     * @param parent
+     * @param position
+     * @return
+     */
+    public boolean isLastRow(RecyclerView parent,int position) {
+        int itemCount = parent.getAdapter().getItemCount();  //itemView的总数
+        GridLayoutManager gridLayoutManager = (GridLayoutManager)parent.getLayoutManager();
+        int spanCount = gridLayoutManager.getSpanCount(); //gridLayoutManager有多少列
+        itemCount = itemCount - itemCount % spanCount;
+        if (position >= itemCount) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    /**
+     * 是否是最后一列
+     * @param parent
+     * @param position
+     * @return
+     */
+    public boolean isLastColunm(RecyclerView parent,int position) {
+        GridLayoutManager gridLayoutManager = (GridLayoutManager) parent.getLayoutManager();
+        int spanCount = gridLayoutManager.getSpanCount();
+        if ((position + 1) % spanCount ==0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    }

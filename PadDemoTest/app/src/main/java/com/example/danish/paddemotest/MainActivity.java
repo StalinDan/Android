@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         int spanCount = 6;
-        int spacing = 50;
+//        int spacing = 50;
+        int spacing = 0;
         boolean includeEdge = false;
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(spanCount,spacing,includeEdge));
 
