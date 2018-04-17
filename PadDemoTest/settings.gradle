@@ -1,1 +1,1 @@
-include ':app', ':djkeyboard'
+include ':app', ':djkeyboard',':android-extend'
