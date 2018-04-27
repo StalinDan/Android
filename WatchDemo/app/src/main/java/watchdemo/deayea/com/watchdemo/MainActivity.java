@@ -25,7 +25,11 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     Vibrator vibrator;
-    PowerManager.WakeLock wl;
+
+    private KeyguardManager km;
+    private KeyguardManager.KeyguardLock kl;
+    private PowerManager pm;
+    private PowerManager.WakeLock wl;
 
     @SuppressLint("WrongConstant")
     @Override
@@ -33,19 +37,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.i("aa","onCreate");
 
         vibrator = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
 
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-//        requestWindowFeature(Window.FEATURE_NO_TITLE); //hide title
         Window win = getWindow();
         WindowManager.LayoutParams winParams = win.getAttributes();
         winParams.flags |= (WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
-                | WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON
-                | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
-                | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                | WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON);
+//                | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+//                | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setRequestedOrientation(0);
 
 
@@ -60,13 +64,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 //                        vibrator.vibrate(1000*60*60*24);
-                        wakeUpAndUnlock();
+//                        wakeUpAndUnlock();
+                        wakeAndUnlock(true);
                         long[] pattern = { 10, 10000 };
                         vibrator.vibrate(pattern,0);
                     }
                 },30000);
-
-//                vibrator.vibrate(1000*60*60*24);
 
 
             }
@@ -77,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 vibrator.cancel();
+//                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                wakeAndUnlock(false);
             }
         });
 
@@ -91,7 +96,12 @@ public class MainActivity extends AppCompatActivity {
 //        openApplicationFromBackground(this);
 
         WatchApplication application = WatchApplication.getContext();
-        application.openAPP("watchdemo.deayea.com.watchdemo");
+
+        if (application.isBackground(this)) {
+            Log.i("aa","在后台");
+            application.openAPP("watchdemo.deayea.com.watchdemo");
+        }
+
 
         // 获取电源管理器对象
         PowerManager pm = (PowerManager) this.getSystemService(POWER_SERVICE);
@@ -106,18 +116,79 @@ public class MainActivity extends AppCompatActivity {
             wl.acquire(10000); // 点亮屏幕
             wl.release(); // 释放
 
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         }
+
+
         // 屏幕解锁
         KeyguardManager keyguardManager = (KeyguardManager) this.getSystemService(KEYGUARD_SERVICE);
         KeyguardManager.KeyguardLock keyguardLock = keyguardManager.newKeyguardLock("unLock");
 //        // 屏幕锁定
 //        keyguardLock.reenableKeyguard();
         keyguardLock.disableKeyguard(); // 解锁
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
 
-//    /**
+    private void wakeAndUnlock(boolean b) {
+        if(b) {
+            //获取电源管理器对象
+            pm=(PowerManager) getSystemService(Context.POWER_SERVICE);
+            //获取PowerManager.WakeLock对象，后面的参数|表示同时传入两个值，最后的是调试用的Tag
+            wl = pm.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "bright");
+
+            //点亮屏幕
+            wl.acquire();
+
+            //得到键盘锁管理器对象
+            km= (KeyguardManager)getSystemService(Context.KEYGUARD_SERVICE);
+            kl = km.newKeyguardLock("unLock");
+
+            //解锁
+            if (km.inKeyguardRestrictedInputMode()) {
+                // 解锁键盘
+                kl.disableKeyguard();
+            }
+
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        } else {
+            //锁屏
+            kl.reenableKeyguard();
+
+            //释放wakeLock，关灯
+            wl.release();
+        }
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("aa","onStart");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("aa","onPause");
+//        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("aa","onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("aa","onDestroy");
+    }
+
+    //    /**
 //     * 打开应用. 应用在前台不处理,在后台就直接在前台展示当前界面, 未开启则重新启动
 //     */
 //    public void openApplicationFromBackground(Context context) {
