@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="640dp"
+    android:layout_height="420dp"
+    android:background="#fff">
+
+    <LinearLayout
+        android:id="@+id/loginLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:id="@+id/accountLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize"
+                android:text="账号："/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edit_text_bg">
+
+                <EditText
+                    android:id="@+id/accountEditText"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:background="@null"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pwdLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/accountLL"
+            android:layout_marginTop="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize"
+                android:text="密码："/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edit_text_bg">
+
+                <EditText
+                    android:id="@+id/pwdEditText"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:password="true"
+                    android:background="@null"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/closeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_corner_blue"
+        android:textColor="#fff"
+        android:textSize="@dimen/buttonWhiteFontSize"
+        android:text="关闭"
+        android:layout_alignLeft="@+id/loginLL"
+        android:layout_below="@+id/loginLL"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_corner_blue"
+        android:textColor="#fff"
+        android:textSize="@dimen/buttonWhiteFontSize"
+        android:text="登录"
+        android:layout_alignRight="@+id/loginLL"
+        android:layout_below="@+id/loginLL"
+        android:layout_marginTop="30dp"/>
+
+
+
+</RelativeLayout>

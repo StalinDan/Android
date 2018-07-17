@@ -16,6 +16,7 @@ import com.example.danish.demotest.Fragment.MonitorFragment;
 import com.example.danish.demotest.Fragment.RankingFragment;
 import com.example.danish.demotest.Fragment.WarnFragment;
 import com.example.danish.demotest.R;
+import com.example.danish.demotest.Utilils.MyLogger;
 import com.example.danish.demotest.Widgets.MainMenuLayout;
 
 import butterknife.BindView;
@@ -77,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainAboutusMenu.setOnClickListener(this);
 
         switchFragment(MONITOR_FRAGMENT);
+
+        MyLogger.i("onCreate");
 
 //        getFragmentManager();
     }
@@ -191,5 +194,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ft.show(nowFragment);
         }
         ft.commitAllowingStateLoss();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        MyLogger.i("onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MyLogger.i("onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MyLogger.i("onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        MyLogger.i("onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        MyLogger.i("onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MyLogger.i("onDestroy");
     }
 }

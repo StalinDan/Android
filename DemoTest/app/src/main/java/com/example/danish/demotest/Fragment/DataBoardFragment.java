@@ -1,5 +1,6 @@
 package com.example.danish.demotest.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.example.danish.demotest.Activity.NewsDetailActivity;
 import com.example.danish.demotest.Adapter.NewsListAdaper;
 import com.example.danish.demotest.R;
+import com.example.danish.demotest.Utilils.MyLogger;
 import com.example.danish.demotest.bean.NewsBean;
 
 import java.util.ArrayList;
@@ -77,4 +79,6 @@ public class DataBoardFragment extends BaseFragment {
             newsBeanList.add(newsBean);
         }
     }
+
+
 }

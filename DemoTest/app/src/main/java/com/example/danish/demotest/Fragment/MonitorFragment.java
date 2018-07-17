@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.danish.demotest.Adapter.WaterFlowAdapter;
 import com.example.danish.demotest.R;
+import com.example.danish.demotest.Utilils.MyLogger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,6 +52,8 @@ public class MonitorFragment extends BaseFragment {
 
         WaterFlowAdapter adapter = new WaterFlowAdapter(getContext());
         recyclerView.setAdapter(adapter);
+
+        MyLogger.i("onCreateView");
         return view;
     }
 
@@ -58,12 +61,14 @@ public class MonitorFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        MyLogger.i("onDestroyView");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        getActivity().unregisterReceiver(changeTextReceivr);
+//        getActivity().unregisterReceiver(changeTextReceivr);
+        MyLogger.i("onDestroy");
     }
 
     class ChangeTextReceivr extends BroadcastReceiver {
@@ -71,5 +76,54 @@ public class MonitorFragment extends BaseFragment {
         public void onReceive(Context context, Intent intent) {
 //            monitor.setText("字体被修改了");
         }
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        MyLogger.i("onCreate");
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        MyLogger.i("onAttach");
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        MyLogger.i("onActivityCreated");
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        MyLogger.i("onStart");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MyLogger.i("onResume");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MyLogger.i("onPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        MyLogger.i("onStop");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        MyLogger.i("onDetach");
     }
 }

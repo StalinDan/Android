@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.content.Context;
 
 import com.example.danish.demotest.R;
+import com.example.danish.demotest.Utilils.MyLogger;
 import com.example.danish.demotest.Widgets.MyRowTitle;
 import com.example.danish.demotest.Widgets.My_iconItem;
 
@@ -60,6 +61,9 @@ public class AboutFragment extends BaseFragment {
         }
 
 
+
         return view;
     }
+
+
 }

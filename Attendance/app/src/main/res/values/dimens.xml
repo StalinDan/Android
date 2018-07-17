@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="buttonWidth">130dp</dimen>
+    <dimen name="buttonHeight">40dp</dimen>
+    <dimen name="buttonWhiteFontSize">20sp</dimen>
+    <dimen name="inputTrainTitleSize">24sp</dimen>
+    <dimen name="textSize">24sp</dimen>
+
+    <dimen name="keyboardFontSize">30sp</dimen>
+    <dimen name="buttonLeftSpace">60dp</dimen>
+    <dimen name="buttonBottomSpace">30dp</dimen>
+    <dimen name="headerImgSize">220dp</dimen>
+
+    <dimen name="retireSpace">15dp</dimen>
+
+</resources>

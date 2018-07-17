@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/values/values.xml",
+                    "from": {
+                        "startLines": "4,5,12,15,21",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "456,517,808,968,1278",
+                        "endLines": "4,11,14,20,27",
+                        "endColumns": "60,12,12,9,9",
+                        "endOffsets": "512,803,963,1273,1648"
+                    }
+                }
+            ]
+        }
+    ]
+}

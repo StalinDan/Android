@@ -40,7 +40,7 @@ public class AlarmClockActivity extends AppCompatActivity {
                 //设定一个五秒后的时间
                 Calendar calendar=Calendar.getInstance();
                 calendar.setTimeInMillis(System.currentTimeMillis());
-                calendar.add(Calendar.SECOND, 30);
+                calendar.add(Calendar.SECOND, 3);
 
                 AlarmManager alarm=(AlarmManager)getSystemService(ALARM_SERVICE);
                 alarm.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);
@@ -56,8 +56,6 @@ public class AlarmClockActivity extends AppCompatActivity {
 
                 Intent intent =new Intent(AlarmClockActivity.this, AlarmReceiver.class);
                 intent.setAction("cancelAlarm");
-//                PendingIntent sender=
-//                        PendingIntent.getBroadcast(AlarmClockActivity.this, 0, intent, 0);
                 sendBroadcast(intent);
 
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

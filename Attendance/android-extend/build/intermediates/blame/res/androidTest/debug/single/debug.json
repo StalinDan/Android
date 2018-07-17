@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_bg_vertical_seekbar_thumb.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/bg_vertical_seekbar_thumb.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable_progress.xml.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable/progress.xml"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable_checkbox.xml.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable/checkbox.xml"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_ic_launcher.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_ic_launcher.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xxhdpi-v4/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable_bgxml_checkbox.xml.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable/bgxml_checkbox.xml"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_bg_checkbox_box.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/bg_checkbox_box.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_ic_launcher.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-hdpi-v4/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_bg_vertical_seekbar_secondary.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/bg_vertical_seekbar_secondary.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_bg_seekbar_secondary.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/bg_seekbar_secondary.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_bg_seekbar_progress.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/bg_seekbar_progress.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_bg_vertical_seekbar_progress.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/bg_vertical_seekbar_progress.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_ic_launcher.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-mdpi-v4/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_bg_seekbar_thumb.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/bg_seekbar_thumb.png"
+    },
+    {
+        "merged": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_bg_checkbox_checker.png.flat",
+        "source": "/Users/danish/Desktop/Android/Attendance/android-extend/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/bg_checkbox_checker.png"
+    }
+]

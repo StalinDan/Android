@@ -36,7 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            menu:menutext="看板"
+            menu:menutext="一"
             menu:noselectedImage="@mipmap/databoard_noselect"
             menu:selectedImage="@mipmap/databoard_select"
             >
@@ -47,7 +47,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            menu:menutext="排名"
+            menu:menutext="二"
             menu:noselectedImage="@mipmap/ranking_noselect"
             menu:selectedImage="@mipmap/ranking_select"
             >
@@ -58,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            menu:menutext="监控"
+            menu:menutext="三"
             menu:noselectedImage="@mipmap/monitor_noselect"
             menu:selectedImage="@mipmap/monitor_select">
 
@@ -69,7 +69,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            menu:menutext="预警"
+            menu:menutext="四"
             menu:noselectedImage="@mipmap/warn_noselect"
             menu:selectedImage="@mipmap/warn_select">
 
@@ -80,7 +80,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            menu:menutext="我的"
+            menu:menutext="五"
             menu:noselectedImage="@mipmap/mine_noselect"
             menu:selectedImage="@mipmap/mine_select">
 

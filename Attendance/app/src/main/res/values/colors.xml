@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="titleColor_333">#333333</color>
+    <color name="titleColor_666">#666666</color>
+    <color name="title_red">#fe5354</color>
+    <color name="title_blue">#518cb8</color>
+    <color name="line_color">#a8a8a8</color>
+
+    <color name="scan_corner_color">#0effc2</color>
+</resources>
