@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+    }
+    #heart {
+      width: 400px;
+      height: 400px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      animation:heart 3s linear infinite;
+    }
+    .box1,.box2,.box3 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      transform: rotate(45deg)
+    }
+    .box1 {
+      top: 0;
+      left: 0;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+    .box2 {
+      top: 0;
+      right: 0;
+      border-top-right-radius: 50%;
+      border-top-left-radius: 50%;
+    }
+    .box3 {
+      bottom: 100px;
+      left: 100px;
+    }
+    @keyframes heart {
+      0% {
+        transform: scale(1, 1)
+      }
+      25% {
+        transform: scale(1.3, 1.3)
+      }
+      50% {
+        transform: scale(1, 1)
+      }
+      75% {
+        transform: scale(1.3, 1.3)
+      }
+      100% {
+        transform: scale(1, 1)
+      }
+    }
+    .text {
+      width: auto;
+      height: auto; 
+      position: fixed;
+      line-height: 50px;
+      top: 18%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      font-size: 50px;
+      color: #fff;
+      z-index: 100;
+      text-align: center;
+      font-family: '楷体';
+    }
+    #text2 {
+      font-size: 40px;
+    }
+    #text3 {
+      font-size: 30px;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="heart">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="text"></div>
+  </div>
+</body>
+<script>
+    var text = document.querySelector('.text')
+    var heart = document.querySelector('#heart')
+    setTimeout(() => {
+      text.innerText = '小柒'
+    }, 1000)
+    setTimeout(() => {
+      text.innerText = '只要有你'
+    }, 2000)
+    setTimeout(() => {
+      text.innerText = '心跳就不会停止'
+    }, 3000)
+    setTimeout(() => {
+      text.innerHTML = `<div>小柒</div><div id="text2">只要有你</div><div id="text3">心跳就不会停止</div>`
+    }, 4500)
+   
+  </script>
+</html>

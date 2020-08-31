@@ -4,4 +4,12 @@
 
     <solid android:color="@color/bright_sun"></solid>
 
+    <stroke
+        android:dashGap="2dp"
+        android:dashWidth="10dp"
+        android:width="2dp"
+        android:color="#00ff00"></stroke>
+
+    <!--<padding android:left="100dp"></padding>-->
+
 </shape>

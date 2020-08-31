@@ -13,6 +13,8 @@ import android.widget.FrameLayout;
 import com.qingmei2.library.view.QRCodeScannerView;
 import com.qingmei2.library.view.QRCoverView;
 
+import java.util.logging.Logger;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -29,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
     QRCodeScannerView scannerView;
     QRCoverView coverView;
+
+
+    interface SunsetInterface {
+       static final int aa = 0;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +95,10 @@ public class MainActivity extends AppCompatActivity {
         });
 //开启后置摄像头
         scannerView.setBackCamera();
+
+       final int a;
+        a = 2;
+        Log.i("aa",a+"");
 
     }
 
